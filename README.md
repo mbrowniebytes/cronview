@@ -5,11 +5,11 @@ Reading crontab -l can be cumbersome and I needed a nicer formatted view of the 
 In linux, crontab -l prints the cron jobs for your user. Simply pipe the content from crontab -l into the script and specify how many occurences, ie.
 
 ```bash
-crontab -l | python view.py <b>4</b>
+crontab -l | python view.py 4
 ```
 means four jobs.
 You can also show the cron agenda for a different user like this:
 
 ```bash
-crontab <b>-u username</b> -l | python view.py 3
+crontab -u username -l | python view.py 3
 ```
