@@ -17,13 +17,14 @@ def main(args):
                 mycronlist = mycron.split()
                 mycrondate = ' '.join(mycronlist[0:5])
                 cron = croniter.croniter(mycrondate, now)
-                for i in range(0,int(sys.argv[1])):
-                    t = cron.get_next(datetime.datetime).strftime(DATEFORMAT)
-                    cronlist.append(str(t) + ' - ' +  str(' '.join(mycronlist[5::])))
+                for i in range(0,int(sys.argv[1])): # get each cronjob n times, not optimal
+                    x = cron.get_next(datetime.datetime).strftime(DATEFORMAT)
+                    y = str(' '.join(mycronlist[5::]))
+                    cronlist.append((x, y)) # list of tuples
 
-        cronsorted = sorted(cronlist)
-        for i in cronsorted[:int(sys.argv[1])]:
-            print i
+        cronlist_sorted = sorted(cronlist, key=lambda x: datetime.datetime.strptime(x[0], DATEFORMAT))
+        for i in cronlist_sorted[:int(sys.argv[1])]:
+            print(i[0] + ' - ' + i[1])
     except IndexError:
         print("You need to specify how many occurences, ie. crontab -l | python view.py 4")
 
