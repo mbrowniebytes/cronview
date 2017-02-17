@@ -41,7 +41,7 @@ sudo ln -s /usr/local/bin/crontab2email /path/to/bashscript.sh
 ```
 Now, add a cron job using `crontab -e` for example like this
 ```bash
-0 7 * * 1 cronview
+0 7 * * 1 crontab2email
 ```
 to send yourself an email every monday at 07:00
 
