@@ -1,7 +1,7 @@
 # cronview
 Reading crontab -l can be cumbersome and I needed a nicer formatted view of the next cron jobs. cronview takes the output from crontab -l and prints a list of desired length.  
 
-![](cronview.png "cronview")
+![](view.png "cronview")
 
 ## Requirements
 
