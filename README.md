@@ -45,5 +45,7 @@ Now, add a cron job using `crontab -e` for example like this
 ```
 to send yourself an email every monday at 07:00
 
+![](email.png "email")
+
 ## Suggestions?
 Suggestions, use the issue tracker or improve the script yourself. I'm happy for push requests.
