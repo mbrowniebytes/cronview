@@ -1,7 +1,7 @@
 # cronview
 Reading crontab -l can be cumbersome and I needed a nicer formatted view of the next cron jobs. cronview takes the output from crontab -l and prints a list of desired length.  
 
-![](view.png "cronview")
+![](images/atom.png "cronview")
 
 ## Requirements
 
@@ -18,7 +18,9 @@ In linux, crontab -l prints the cron jobs for your user. Simply pipe the content
 ```bash
 crontab -l | python view.py 4
 ```
-means four jobs.
+
+![](images/view.png "cronview")
+
 ### Print the three next cron job for a specific user
 You can also show the cron agenda for a different user like this:
 
@@ -45,7 +47,7 @@ Now, add a cron job using `crontab -e` for example like this
 ```
 to send yourself an email every monday at 07:00
 
-![](email.png "email")
+![](images/email.png "email")
 
 ## Suggestions?
 Suggestions, use the issue tracker or improve the script yourself. I'm happy for push requests.
