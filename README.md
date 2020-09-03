@@ -16,7 +16,7 @@ pip install croniter
 In linux, crontab -l prints the cron jobs for your user. Simply pipe the content from crontab -l into the script and specify how many occurences, ie.
 
 ```bash
-crontab -l | python view.py 4
+crontab -l | python cronview.py 4
 ```
 
 ![](images/view.png "cronview")
@@ -25,8 +25,16 @@ crontab -l | python view.py 4
 You can also show the cron agenda for a different user like this:
 
 ```bash
-crontab -u username -l | python view.py 3
+crontab -u username -l | python cronview.py 100
 ```
+
+### Print the 100 next cron jobs for a specific cron file
+You can also show the cron agenda for a different cron file like this:
+
+```bash
+cat /etc/cron.d/yourcrontab | python cronview.py 100
+```
+
 ### Get cron job agenda delivered to your inbox regularly
 You can also setup a cron job to automatically send you an email regularly with a list of the upcoming cron jobs. Require mailutils to be installed.
 
@@ -34,7 +42,7 @@ Write a bashscript such as
 
 ```bash
 #!/bin/sh
-crontab -l | python /path/to/cronview/view.py 7 | mailx -s "Next cronjobs on wonderland" emailaddress
+crontab -l | python /path/to/cronview/cronview.py 10 | mailx -s "Next cronjobs on wonderland" emailaddress
 ```
 Then, add it to PATH by for example making a symbolic link to it
 
